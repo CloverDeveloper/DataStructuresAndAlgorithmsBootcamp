@@ -1,4 +1,5 @@
 using Arrays.Model;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTest
@@ -13,7 +14,7 @@ namespace UnitTest
 
             var act = arrays.GetByIndex(0);
 
-            Assert.IsNull(act);
+            act.Should().BeNull();
         }
 
         [TestMethod]
@@ -25,7 +26,7 @@ namespace UnitTest
 
             var act = arrays.GetByIndex(1);
 
-            Assert.AreEqual(expect, act);
+            act.Should().BeEquivalentTo(expect);
         }
 
         [TestMethod]
@@ -39,7 +40,7 @@ namespace UnitTest
 
             var act = arrays.GetByIndex(1);
 
-            Assert.AreEqual(expect, act);
+            act.Should().BeEquivalentTo(expect);
         }
 
         [TestMethod]
@@ -57,8 +58,8 @@ namespace UnitTest
             var expectCurrentVal = "End";
             var currentVal = arrays.GetByIndex(1);
 
-            Assert.AreEqual(expectDeleteVal, deleteVal);
-            Assert.AreEqual(expectCurrentVal, currentVal);
+            deleteVal.Should().BeEquivalentTo(expectDeleteVal);
+            currentVal.Should().BeEquivalentTo(expectCurrentVal);
         }
 
         [TestMethod]
@@ -66,7 +67,7 @@ namespace UnitTest
         {
             var arrays = new DynamicArray<string>(3);
 
-            Assert.IsTrue(arrays.IsEmpty());
+            arrays.IsEmpty().Should().BeTrue();
         }
 
         [TestMethod]
@@ -76,7 +77,7 @@ namespace UnitTest
 
             var expect = arrays.SetByIndex(0, "Hello");
 
-            Assert.IsTrue(arrays.Contains(expect));
+            arrays.Contains(expect).Should().BeTrue();
         }
 
         [TestMethod]
@@ -88,7 +89,7 @@ namespace UnitTest
 
             var expect = arrays.ReSize();
 
-            Assert.AreEqual(expect,initSize *= 2);
+            expect.Should().Be(initSize *= 2);
         }
 
         [TestMethod]
