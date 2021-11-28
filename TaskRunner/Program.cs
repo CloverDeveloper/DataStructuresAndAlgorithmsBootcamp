@@ -1,21 +1,33 @@
 ﻿using System;
 using Arrays;
+using Autofac;
+using Common.Interface;
 using Common.Model;
+using TaskRunner.Container;
 using TaskRunner.Model;
 
 namespace TaskRunner
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("選取執行課程: 1-10");
 
             var chapterType = Console.ReadLine();
 
-            var task = TaskHelper.GetTask(chapterType.ToEnum<ChapterType>());
+            var container = AutofacContainer.Container();
 
-            task.RunTask();
+            try 
+            {
+                var task = container.ResolveKeyed<ITask>(chapterType.ToEnum<ChapterType>());
+
+                task.RunTask();
+            }
+            catch 
+            {
+                Console.WriteLine("執行失敗");
+            }
         }
     }
 }
