@@ -1,4 +1,7 @@
 ﻿using System;
+using Arrays;
+using Common.Model;
+using TaskRunner.Model;
 
 namespace TaskRunner
 {
@@ -6,7 +9,13 @@ namespace TaskRunner
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("選取執行課程: 1-10");
+
+            var chapterType = Console.ReadLine();
+
+            var task = TaskHelper.GetTask(chapterType.ToEnum<ChapterType>());
+
+            task.RunTask();
         }
     }
 }
