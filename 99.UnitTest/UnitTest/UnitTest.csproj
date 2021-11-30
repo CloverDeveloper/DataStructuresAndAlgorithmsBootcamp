@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\1.Arrays\Arrays\Arrays.csproj" />
+    <ProjectReference Include="..\..\2.LinkedList\LinkedList\LinkedList.csproj" />
   </ItemGroup>
 
 </Project>
