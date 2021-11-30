@@ -9,6 +9,7 @@ namespace Common.Model
     /// </summary>
     public enum ChapterType
     {
-        Arrays_01 = 1
+        Arrays_01 = 1,
+        LinkedList_02 = 2
     }
 }

@@ -6,6 +6,7 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Common.Interface;
 using Common.Model;
+using LinkedList;
 
 namespace TaskRunner.Container
 {
@@ -29,6 +30,8 @@ namespace TaskRunner.Container
             var builder = new ContainerBuilder();
 
             builder.RegisterType<ArraysTask>().Keyed<ITask>(ChapterType.Arrays_01).InstancePerLifetimeScope();
+            builder.RegisterType<LinkedListTask>()
+                .Keyed<ITask>(ChapterType.LinkedList_02).InstancePerLifetimeScope();
 
             return builder.Build();
         }
