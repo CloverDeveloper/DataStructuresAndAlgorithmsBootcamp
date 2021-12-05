@@ -7,6 +7,7 @@ using Autofac.Extensions.DependencyInjection;
 using Common.Interface;
 using Common.Model;
 using LinkedList;
+using StacksAndQueue;
 
 namespace TaskRunner.Container
 {
@@ -32,6 +33,8 @@ namespace TaskRunner.Container
             builder.RegisterType<ArraysTask>().Keyed<ITask>(ChapterType.Arrays_01).InstancePerLifetimeScope();
             builder.RegisterType<LinkedListTask>()
                 .Keyed<ITask>(ChapterType.LinkedList_02).InstancePerLifetimeScope();
+            builder.RegisterType<StacksAndQueueTask>()
+                .Keyed<ITask>(ChapterType.StacksAndQueue_03).InstancePerLifetimeScope();
 
             return builder.Build();
         }

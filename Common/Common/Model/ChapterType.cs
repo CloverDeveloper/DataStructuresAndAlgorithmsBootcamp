@@ -10,6 +10,7 @@ namespace Common.Model
     public enum ChapterType
     {
         Arrays_01 = 1,
-        LinkedList_02 = 2
+        LinkedList_02 = 2,
+        StacksAndQueue_03 = 3
     }
 }
