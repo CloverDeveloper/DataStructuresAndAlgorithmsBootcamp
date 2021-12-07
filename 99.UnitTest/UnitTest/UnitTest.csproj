@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\1.Arrays\Arrays\Arrays.csproj" />
     <ProjectReference Include="..\..\2.LinkedList\LinkedList\LinkedList.csproj" />
+    <ProjectReference Include="..\..\3.StacksAndQueue\StacksAndQueue\StacksAndQueue.csproj" />
   </ItemGroup>
 
 </Project>
