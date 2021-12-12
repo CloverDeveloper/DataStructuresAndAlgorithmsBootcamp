@@ -6,6 +6,7 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Common.Interface;
 using Common.Model;
+using HashTable;
 using LinkedList;
 using StacksAndQueue;
 
@@ -35,7 +36,8 @@ namespace TaskRunner.Container
                 .Keyed<ITask>(ChapterType.LinkedList_02).InstancePerLifetimeScope();
             builder.RegisterType<StacksAndQueueTask>()
                 .Keyed<ITask>(ChapterType.StacksAndQueue_03).InstancePerLifetimeScope();
-
+            builder.RegisterType<HashTableTask>()
+                .Keyed<ITask>(ChapterType.HashTable_04).InstancePerLifetimeScope();
             return builder.Build();
         }
     }

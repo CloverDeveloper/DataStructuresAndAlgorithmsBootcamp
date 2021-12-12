@@ -11,6 +11,7 @@ namespace Common.Model
     {
         Arrays_01 = 1,
         LinkedList_02 = 2,
-        StacksAndQueue_03 = 3
+        StacksAndQueue_03 = 3,
+        HashTable_04 = 4
     }
 }
