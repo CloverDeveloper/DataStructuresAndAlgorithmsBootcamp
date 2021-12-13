@@ -4,6 +4,7 @@ using System.Text;
 using Arrays;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using BianryTree;
 using Common.Interface;
 using Common.Model;
 using HashTable;
@@ -38,6 +39,8 @@ namespace TaskRunner.Container
                 .Keyed<ITask>(ChapterType.StacksAndQueue_03).InstancePerLifetimeScope();
             builder.RegisterType<HashTableTask>()
                 .Keyed<ITask>(ChapterType.HashTable_04).InstancePerLifetimeScope();
+            builder.RegisterType<BianryTreeTask>()
+                .Keyed<ITask>(ChapterType.BianryTree_05).InstancePerLifetimeScope();
             return builder.Build();
         }
     }
