@@ -88,11 +88,18 @@ namespace UnitTest
             var tree = new BinaryTree();
 
             tree.Insert(5, "a");
-            tree.Insert(6, "b");
-            tree.Insert(7, "c");
+            tree.Insert(10, "b");
+            tree.Insert(9, "c");
             tree.Insert(4, "f");
+            tree.Insert(12, "g");
+            tree.Insert(11, "g");
 
-            tree.Delete(4);
+            tree.Delete(12);
+
+            var maxNode = tree.Max();
+            maxNode.Should().NotBeNull();
+            maxNode.Key.Should().Be(11);
+            maxNode.Value.Should().Be("g");
         }
     }
 }
