@@ -13,6 +13,7 @@ namespace Common.Model
         LinkedList_02 = 2,
         StacksAndQueue_03 = 3,
         HashTable_04 = 4,
-        BianryTree_05 = 5
+        BianryTree_05 = 5,
+        FibonacciSeries_08 = 8
     }
 }

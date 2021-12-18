@@ -11,6 +11,7 @@
     <ProjectReference Include="..\3.StacksAndQueue\StacksAndQueue\StacksAndQueue.csproj" />
     <ProjectReference Include="..\4.HashTable\HashTable\HashTable.csproj" />
     <ProjectReference Include="..\5.BianryTree\BianryTree\BianryTree.csproj" />
+    <ProjectReference Include="..\8.FibonacciSeries\FibonacciSeries\FibonacciSeries.csproj" />
   </ItemGroup>
 
   <ItemGroup>

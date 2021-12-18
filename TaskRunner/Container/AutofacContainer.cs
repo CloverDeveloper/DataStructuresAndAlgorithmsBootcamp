@@ -7,6 +7,7 @@ using Autofac.Extensions.DependencyInjection;
 using BianryTree;
 using Common.Interface;
 using Common.Model;
+using FibonacciSeries;
 using HashTable;
 using LinkedList;
 using StacksAndQueue;
@@ -41,6 +42,8 @@ namespace TaskRunner.Container
                 .Keyed<ITask>(ChapterType.HashTable_04).InstancePerLifetimeScope();
             builder.RegisterType<BianryTreeTask>()
                 .Keyed<ITask>(ChapterType.BianryTree_05).InstancePerLifetimeScope();
+            builder.RegisterType<FibonacciSeriesTask>()
+                .Keyed<ITask>(ChapterType.FibonacciSeries_08).InstancePerLifetimeScope();
             return builder.Build();
         }
     }
