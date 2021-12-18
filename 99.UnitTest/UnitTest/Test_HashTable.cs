@@ -8,7 +8,7 @@ using HashTable.Model;
 namespace UnitTest
 {
     [TestClass]
-    public class Task_HashTable
+    public class Test_HashTable
     {
         [TestMethod]
         public void GetIndex() 

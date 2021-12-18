@@ -8,7 +8,7 @@ using BianryTree.Model;
 namespace UnitTest
 {
     [TestClass]
-    public class Task_BianryTree
+    public class Test_BianryTree
     {
         [TestMethod]
         public void Insert() 

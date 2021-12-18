@@ -8,7 +8,7 @@ using StacksAndQueue.Model;
 namespace UnitTest
 {
     [TestClass]
-    public class Task_StacksAndQueue
+    public class Test_StacksAndQueue
     {
         [TestMethod]
         public void StacksPush() 
