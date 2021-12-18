@@ -12,6 +12,7 @@
     <ProjectReference Include="..\4.HashTable\HashTable\HashTable.csproj" />
     <ProjectReference Include="..\5.BianryTree\BianryTree\BianryTree.csproj" />
     <ProjectReference Include="..\8.FibonacciSeries\FibonacciSeries\FibonacciSeries.csproj" />
+    <ProjectReference Include="..\9.Sort\Sort\Sort.csproj" />
   </ItemGroup>
 
   <ItemGroup>

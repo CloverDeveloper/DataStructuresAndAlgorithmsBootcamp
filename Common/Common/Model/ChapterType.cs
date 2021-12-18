@@ -14,6 +14,7 @@ namespace Common.Model
         StacksAndQueue_03 = 3,
         HashTable_04 = 4,
         BianryTree_05 = 5,
-        FibonacciSeries_08 = 8
+        FibonacciSeries_08 = 8,
+        Sort_09 = 9
     }
 }

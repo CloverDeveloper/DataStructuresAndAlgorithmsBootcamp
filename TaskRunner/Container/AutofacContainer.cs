@@ -10,6 +10,7 @@ using Common.Model;
 using FibonacciSeries;
 using HashTable;
 using LinkedList;
+using Sort;
 using StacksAndQueue;
 
 namespace TaskRunner.Container
@@ -44,6 +45,8 @@ namespace TaskRunner.Container
                 .Keyed<ITask>(ChapterType.BianryTree_05).InstancePerLifetimeScope();
             builder.RegisterType<FibonacciSeriesTask>()
                 .Keyed<ITask>(ChapterType.FibonacciSeries_08).InstancePerLifetimeScope();
+            builder.RegisterType<SortTask>()
+                .Keyed<ITask>(ChapterType.Sort_09).InstancePerLifetimeScope();
             return builder.Build();
         }
     }
