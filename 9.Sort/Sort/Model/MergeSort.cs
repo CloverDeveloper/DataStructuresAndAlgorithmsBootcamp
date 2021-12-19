@@ -31,7 +31,7 @@ namespace Sort.Model
                 this.SortItem(arrays, left, middle);
                 this.SortItem(arrays, middle + 1, right);
 
-                this.SortItem(arrays, left, middle, right);
+                this.MergeItem(arrays, left, middle, right);
             }
 
             return arrays;
@@ -40,7 +40,7 @@ namespace Sort.Model
         // Merges two subarrays of arr[]
         // First subarray is array[l..m]
         // Second subarray is array[m+1..r]
-        private void SortItem(int[] arrays, int left,int middle, int right)
+        private void MergeItem(int[] arrays, int left,int middle, int right)
         {
             Console.WriteLine("Split left:{0},middle:{1}，right:{2}", left, middle,right);
 
@@ -95,6 +95,58 @@ namespace Sort.Model
                 arrays[k] = R[j];
                 j += 1;
                 k += 1;
+            }
+
+            this.Print(arrays);
+        }
+
+        private void Test(int[] arrays, int left, int middle, int right) 
+        {
+            int leftGroupCount = middle - left + 1;
+            int[] leftGroupArray = new int[leftGroupCount];
+            for (int i = 0; i < leftGroupCount; i += 1) 
+            {
+                leftGroupArray[i] = arrays[i + left];
+            }
+
+            int rightGroupCount = right - middle;
+            int[] rightGroupArray = new int[rightGroupCount];
+            for (int i = 0; i < rightGroupCount; i += 1)
+            {
+                rightGroupArray[i] = arrays[i + middle + 1];
+            }
+
+            int tempCount = left;
+            int leftCount = 0;
+            int rightCount = 0;
+            while (leftCount < leftGroupCount && rightCount < rightGroupCount) 
+            {
+                if (leftGroupArray[leftCount] <= rightGroupArray[rightCount]) 
+                {
+                    arrays[tempCount] = leftGroupArray[leftCount];
+                    leftCount += 1;
+                }
+                else 
+                {
+                    arrays[tempCount] = rightGroupArray[rightCount];
+                    rightCount += 1;
+                }
+
+                tempCount += 1;
+            }
+
+            while (leftCount < leftGroupCount) 
+            {
+                arrays[tempCount] = leftGroupArray[leftCount];
+                leftCount += 1;
+                tempCount += 1;
+            }
+
+            while (rightCount < rightGroupCount)
+            {
+                arrays[tempCount] = rightGroupArray[rightCount];
+                rightCount += 1;
+                tempCount += 1;
             }
 
             this.Print(arrays);
