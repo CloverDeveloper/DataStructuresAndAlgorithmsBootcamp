@@ -36,5 +36,18 @@ namespace UnitTest
             nums[0].Should().Be(1);
             nums[nums.Length - 1].Should().Be(9);
         }
+
+        [TestMethod]
+        public void QuickSort()
+        {
+            int[] nums = new int[] { 8, 4, 7, 3, 6, 7, 8, 9, 2, 1, 5 };
+
+            ISort quick = new QuickSort();
+
+            nums = quick.Sort(nums);
+
+            nums[0].Should().Be(1);
+            nums[nums.Length - 1].Should().Be(9);
+        }
     }
 }
